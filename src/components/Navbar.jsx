@@ -62,12 +62,6 @@ export default function Navbar() {
             </div>
           </div>
         )}
-        <div className={styles.socials}>
-              <a href="https://www.facebook.com" target="_blank" rel="noreferrer"><FaFacebook /></a>
-              <a href="https://www.instagram.com" target="_blank" rel="noreferrer"><FaInstagram /></a>
-              <a href="https://github.com" target="_blank" rel="noreferrer"><FaGithub /></a>
-              
-            </div>
         <button className={styles.toggleButton} onClick={toggleTheme}>
                 {darkMode ? '🌞' : '🌙'}
         </button>
