@@ -1,0 +1,396 @@
+/* Enhanced Design System for Skills */
+:root {
+  /* Skill Brand Colors */
+  --js-primary: #f7df1e;
+  --js-secondary: #f0db4f;
+  --react-primary: #61dafb;
+  --react-secondary: #21d4fd;
+  --figma-primary: #f24e1e;
+  --figma-secondary: #ff6b35;
+  --node-primary: #339933;
+  --node-secondary: #68c142;
+  --mongo-primary: #47a248;
+  --mongo-secondary: #4db33d;
+  
+  /* Enhanced Backgrounds */
+  --skill-bg-primary: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+  --skill-bg-accent: radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+                     radial-gradient(circle at 70% 30%, rgba(245, 101, 101, 0.06) 0%, transparent 60%);
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  
+  /* Shadows & Effects */
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.18);
+  --glow-js: 0 0 30px rgba(247, 223, 30, 0.4);
+  --glow-react: 0 0 30px rgba(97, 218, 251, 0.4);
+  --glow-figma: 0 0 30px rgba(242, 78, 30, 0.4);
+  --glow-node: 0 0 30px rgba(51, 153, 51, 0.4);
+  --glow-mongo: 0 0 30px rgba(71, 162, 72, 0.4);
+  
+  /* Transitions */
+  --transition-smooth: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-bounce: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-elastic: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Main Skills Section with Premium Design */
+.skillsSection {
+  position: relative;
+  padding: 100px 30px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: 
+    var(--skill-bg-accent),
+    var(--skill-bg-primary);
+  border-radius: 32px;
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Enhanced Animated Background */
+.skillsSection::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: 
+    conic-gradient(from 0deg at 50% 50%, 
+      rgba(247, 223, 30, 0.08) 0deg,
+      rgba(97, 218, 251, 0.08) 72deg,
+      rgba(242, 78, 30, 0.08) 144deg,
+      rgba(51, 153, 51, 0.08) 216deg,
+      rgba(71, 162, 72, 0.08) 288deg,
+      rgba(247, 223, 30, 0.08) 360deg
+    );
+  animation: rotate 30s linear infinite;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.skillsSection::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(247, 223, 30, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(97, 218, 251, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 50% 50%, rgba(242, 78, 30, 0.05) 0%, transparent 50%);
+  z-index: 0;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* Premium Heading Design */
+.skillsHeading {
+  position: relative;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 60px;
+  z-index: 2;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.skillsHeading::before {
+  content: "My Skills";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #1e293b, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(1px);
+  opacity: 0.3;
+  z-index: -1;
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+.skillsHeading::after {
+  content: "My Skills";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #1e293b 0%, #3b82f6 50%, #8b5cf6 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% { filter: blur(1px) brightness(1); }
+  50% { filter: blur(2px) brightness(1.5); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Enhanced Chart Container with Glassmorphism */
+.chartContainer {
+  position: relative;
+  background: var(--glass-bg);
+  border: 2px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 40px 35px;
+  box-shadow: 
+    var(--shadow-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  z-index: 2;
+  overflow: hidden;
+  
+  /* Enhanced entrance animation */
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: var(--transition-elastic);
+}
+
+/* Premium Top Gradient Border */
+.chartContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--js-primary) 0%,
+    var(--react-primary) 25%,
+    var(--figma-primary) 50%,
+    var(--node-primary) 75%,
+    var(--mongo-primary) 100%
+  );
+  background-size: 300% 100%;
+  border-radius: 28px 28px 0 0;
+  animation: skillGradient 6s ease-in-out infinite;
+}
+
+/* Floating Skill Icons Background */
+.chartContainer::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(247, 223, 30, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(97, 218, 251, 0.15) 0%, transparent 40%);
+  border-radius: 50%;
+  animation: floatSkills 8s ease-in-out infinite;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+@keyframes skillGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes floatSkills {
+  0%, 100% { 
+    transform: rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  50% { 
+    transform: rotate(180deg) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Visible State with Enhanced Animation */
+.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: chartEntrance 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes chartEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95) rotateX(10deg);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(-5px) scale(1.02) rotateX(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+/* Interactive Hover Effects for Container */
+.chartContainer:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 
+    var(--shadow-strong),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 0 50px rgba(59, 130, 246, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.chartContainer:hover::before {
+  height: 8px;
+  animation-duration: 3s;
+  filter: brightness(1.2) saturate(120%);
+}
+
+/* Skill Level Indicators */
+.chartContainer:hover::after {
+  animation-duration: 4s;
+  opacity: 0.9;
+  filter: brightness(1.3);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  .skillsSection {
+    padding: 80px 25px 60px;
+    border-radius: 24px;
+    max-width: 95%;
+  }
+  
+  .chartContainer {
+    padding: 35px 25px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsSection {
+    padding: 60px 20px 50px;
+    border-radius: 20px;
+  }
+
+  .skillsHeading {
+    margin-bottom: 40px;
+  }
+
+  .chartContainer {
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+  
+  .chartContainer::before {
+    height: 4px;
+  }
+  
+  .chartContainer::after {
+    width: 60px;
+    height: 60px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skillsSection {
+    padding: 40px 15px;
+    border-radius: 16px;
+  }
+
+  .chartContainer {
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+  
+  .chartContainer::after {
+    display: none; /* Hide floating effect on small screens */
+  }
+}
+
+/* Accessibility & Performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  .skillsSection::before,
+  .skillsSection::after,
+  .chartContainer::after {
+    animation: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --skill-bg-primary: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #020617 100%);
+    --glass-bg: rgba(15, 23, 42, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+  
+  .skillsHeading::after {
+    background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 50%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .chartContainer {
+    box-shadow: 
+      var(--shadow-medium),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Focus states for accessibility */
+.chartContainer:focus-within {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 4px;
+}
+
+/* Print optimization */
+@media print {
+  .skillsSection {
+    background: white;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .skillsSection::before,
+  .skillsSection::after,
+  .chartContainer::before,
+  .chartContainer::after {
+    display: none;
+  }
+  
+  .chartContainer {
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}

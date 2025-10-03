@@ -1,0 +1,175 @@
+/* ======================
+   Footer Styling
+====================== */
+
+.footer {
+  background: linear-gradient(135deg, var(--nav-bg-primary) 0%, var(--nav-bg-secondary) 100%);
+  color: #f3f4f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  flex-wrap: wrap; /* cho responsive */
+}
+
+.copyright {
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.menu {
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.menu a {
+  position: relative;
+  color: #e5e7eb;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+  padding: 4px 0;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  color: #facc15;
+  cursor: pointer;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* Scroll to Top Button */
+.scrollTop {
+  width: 70px;
+  height: 70px;
+  background-color: #565ba1;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  position: absolute;
+  top: -35px;
+  left: 50%; 
+  transform: translateX(-50%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+[data-theme="dark"] .scrollTop {
+  background-color: #041938;
+  color: #f4f4f5;
+}
+
+[data-theme="dark"] .scrollTop:hover {
+  background-color: #27272a;
+}
+
+[data-theme="light"] .scrollTop {
+  background-color: #565ba1;
+  color: #ffffff;
+}
+
+[data-theme="light"] .scrollTop:hover {
+  background-color: #41415c;
+}
+
+/* ======================
+   Responsive Design
+====================== */
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 1.5rem;
+  }
+
+  .scrollTop {
+    width: 65px;
+    height: 65px;
+    font-size: 1.3rem;
+    top: -32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .copyright {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .menu {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .scrollTop {
+    top: -30px;
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .scrollTop {
+    width: 55px;
+    height: 55px;
+    font-size: 1rem;
+    top: -25px;
+  }
+
+  .menu {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .copyright {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}

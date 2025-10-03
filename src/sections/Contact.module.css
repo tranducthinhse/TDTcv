@@ -1,0 +1,192 @@
+/* Contact Section Variables */
+:root {
+  --contact-primary: #6366f1;
+  --contact-secondary: #4f46e5;
+  --contact-accent: #10b981;
+  --contact-warning: #f59e0b;
+  --contact-error: #ef4444;
+
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.18);
+  --shadow-form: 0 25px 80px rgba(99, 102, 241, 0.15);
+  --glow-primary: 0 0 30px rgba(99, 102, 241, 0.4);
+  --glow-success: 0 0 30px rgba(16, 185, 129, 0.4);
+
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-elastic: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Section Background (light/dark theo App theme) */
+.section {
+  padding: 100px 20px 80px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Container */
+.contactContainer {
+  max-width: 1000px;
+  width: 95%;
+  background: var(--button-bg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  padding: 50px;
+  border-radius: 32px;
+  box-shadow: var(--shadow-medium);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+/* Dark mode container override */
+.app.dark .contactContainer {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+}
+
+/* Heading */
+.heading {
+  grid-column: span 2;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--contact-primary), var(--contact-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle */
+.subtitle {
+  grid-column: span 2;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input,
+.textarea {
+  padding: 16px 20px;
+  background: var(--bg-color);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: var(--transition-bounce);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #94a3b8;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--contact-primary);
+  box-shadow: var(--glow-primary);
+}
+
+/* Dark mode input */
+.app.dark .input,
+.app.dark .textarea {
+  background: #0f172a;
+  color: #f1f5f9;
+  border-color: #334155;
+}
+
+/* Button */
+.button {
+  background: linear-gradient(135deg, var(--contact-primary), var(--contact-secondary));
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-elastic);
+  box-shadow: var(--shadow-form);
+}
+
+.button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-strong), var(--glow-primary);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Dark mode button */
+.app.dark .button {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+}
+
+/* Contact Info */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactInfo a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--text-color);
+  background: var(--button-bg);
+  border-radius: 12px;
+  transition: var(--transition-bounce);
+}
+
+.contactInfo a:hover {
+  color: var(--contact-primary);
+  transform: translateX(6px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+}
+
+/* Dark mode contact info */
+.app.dark .contactInfo a {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contactContainer {
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .heading,
+  .subtitle {
+    grid-column: span 1;
+  }
+}

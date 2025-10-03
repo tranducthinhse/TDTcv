@@ -1,0 +1,124 @@
+/* ===========================
+   Reset & Base Styles
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+section {
+  width: 100%;
+}
+
+section + section {
+  margin-top: 50px; /* khoảng cách giữa các section */
+}
+
+/* ===========================
+   Theme Variables
+=========================== */
+:root {
+  /* Font and system settings */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Light Theme (Default) */
+  --bg-color: #f9fafb;
+  --text-color: #111;
+  --card-bg: #ffffff;
+  --card-text: #1e293b;
+  --link-color: #3b82f6;
+  --link-hover: #2563eb;
+  --button-bg: #f9f9f9;
+  --button-text: #111;
+  --border-color: #ccc;
+
+  --scroll-bg: #000;
+  --scroll-bg-hover: #41403dff;
+  --scroll-text: #a3a3a3;
+}
+
+
+/* ===========================
+   App Wrapper
+=========================== */
+.app {
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh; /* tránh bị lộ màu body */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+/* ===========================
+   Typography & Links
+=========================== */
+a {
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* ===========================
+   Buttons
+=========================== */
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease;
+}
+
+button:hover {
+  border-color: var(--link-color);
+}
+
+/* ===========================
+   Toggle Button
+=========================== */
+.toggleButton {
+  margin-left: 1rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--button-bg);
+  color: var(--button-text);
+  transition: transform 0.3s ease,
+              background 0.3s ease,
+              color 0.3s ease;
+}
+
+.toggleButton:hover {
+  transform: scale(1.1);
+  background: var(--link-color);
+  color: #fff;
+}
